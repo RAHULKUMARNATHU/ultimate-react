@@ -212,3 +212,13 @@ countWrong;
 //nullish coalescing
 const count = book.reviews.librarything.reviewsCount ?? "no data";
 count;
+
+//optional chaining
+
+const getTotalReviewCount = (book) => {
+  const goodreads = book.reviews?.goodreads?.reviewsCount ?? 0;
+  const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
+  return goodreads + librarything;
+};
+
+console.log(getTotalReviewCount(book));
